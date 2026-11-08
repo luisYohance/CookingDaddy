@@ -1,0 +1,10 @@
+{
+  "description": "A front-end user portal with a landing page, login screen, and profile homepage, helping users access and manage their account.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

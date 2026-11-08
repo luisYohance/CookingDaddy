@@ -1,0 +1,1259 @@
+@font-face {
+  font-family: "Inter:Bold";
+  src: url("https://static.figma.com/font/Inter_1") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Inter:Medium";
+  src: url("https://static.figma.com/font/Inter_1") format("woff2");
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Inter:Regular";
+  src: url("https://static.figma.com/font/Inter_1") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Inter:Semi Bold";
+  src: url("https://static.figma.com/font/Inter_1") format("woff2");
+  font-style: normal;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Lilita One:Regular";
+  src: url("https://static.figma.com/font/LilitaOne-Regular_1") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Lobster Two:Regular";
+  src: url("https://static.figma.com/font/LobsterTwo-Regular_1") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Lobster:Regular";
+  src: url("https://static.figma.com/font/Pushster-Regular_1") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+}
+
+:root {
+  --cream: #ffded1;
+  --peach: #f3bc99;
+  --wine: #4d1010;
+  --orange: #ff6a00;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  max-width: 100%;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background: var(--cream);
+  color: var(--wine);
+  font-family: "Inter:Regular", Arial, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.brand {
+  font-family: "Lobster:Regular", cursive;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+}
+
+/* Landing */
+.landing-page {
+  position: relative;
+  min-height: 100dvh;
+  overflow: hidden;
+  background: var(--cream);
+}
+
+.landing-header {
+  position: relative;
+  z-index: 5;
+  min-height: 131px;
+  padding: 0 clamp(24px, 3.5vw, 50px);
+  background: var(--peach);
+}
+
+.landing-header-rule {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 17px;
+}
+
+.brand-landing {
+  font-size: 64px;
+  line-height: 1.2;
+}
+
+.landing-header nav {
+  gap: clamp(38px, 8vw, 112px);
+}
+
+.landing-nav-link {
+  font-family: "Lilita One:Regular", sans-serif;
+  font-size: 32px;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+}
+
+.landing-hero {
+  position: relative;
+  height: clamp(360px, 34.2vw, 492px);
+}
+
+.landing-food,
+.landing-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.landing-food {
+  object-fit: cover;
+}
+
+.landing-overlay {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.landing-curve {
+  position: absolute;
+  z-index: 2;
+  bottom: -1px;
+  width: 100%;
+  height: 300px;
+}
+
+.landing-chef {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  width: clamp(280px, 34vw, 480px);
+  transform: translate(-50%, 2%);
+}
+
+.landing-tagline {
+  position: relative;
+  z-index: 4;
+  margin: clamp(140px, 18vw, 220px) 20px 30px;
+  font-family: "Lobster:Regular", cursive;
+  font-size: clamp(66px, 8.9vw, 128px);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  text-align: center;
+}
+
+/* Login */
+.login-page {
+  display: grid;
+  grid-template-columns: minmax(0, 61.1%) minmax(360px, 38.9%);
+  min-height: 100dvh;
+  background: var(--cream);
+}
+
+.login-panel {
+  min-width: 0;
+  min-height: 100dvh;
+}
+
+.login-brand {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 215px;
+  padding: 0;
+  background: var(--peach);
+}
+
+.login-wordmark {
+  z-index: 1;
+  margin: 10px;
+}
+
+.login-title {
+  display: block;
+  font-size: 72px;
+  line-height: 1.2;
+}
+
+.login-subtitle {
+  font-family: "Lobster Two:Regular", cursive;
+  font-size: 32px;
+  line-height: 1.2;
+  letter-spacing: 0.03em;
+}
+
+.login-chef {
+  width: 206px;
+  height: 207px;
+  margin: 10px;
+}
+
+.login-title-rule {
+  position: static;
+  display: block;
+  width: min(600px, calc(100% - 15px));
+  height: 3px;
+  margin-top: 4px;
+  margin-left: -9px;
+}
+
+.login-rule {
+  display: block;
+  width: 100%;
+  height: 17px;
+}
+
+.login-form-wrap {
+  width: min(502px, calc(100% - 60px));
+  margin: 120px auto 50px;
+}
+
+.login-heading {
+  font-family: "Inter:Semi Bold", sans-serif;
+  font-size: 30px;
+  color: var(--wine);
+}
+
+.wip-badge {
+  padding: 4px 8px;
+  border: 1px solid var(--wine);
+  border-radius: 99px;
+  font-family: "Inter:Bold", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.login-input {
+  height: 70px;
+  padding: 12px 16px;
+  border: 1px solid #000;
+  border-radius: 10px;
+  color: #000;
+  font-family: "Inter:Regular", sans-serif;
+  font-size: 20px;
+}
+
+.login-input::placeholder {
+  color: rgba(0, 0, 0, 0.28);
+}
+
+.login-check {
+  margin: -1px 0 4px;
+  color: #000;
+  font-size: 16px;
+}
+
+.login-check .form-check-input {
+  background-image: url("/assets/login/ae6ad.svg");
+  background-position: center;
+  background-size: 19px 21px;
+  border-color: #000;
+  border-radius: 0;
+}
+
+.login-button {
+  height: 50px;
+  border-radius: 99px;
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  color: #fff;
+  font-family: "Inter:Semi Bold", sans-serif;
+  font-size: 24px;
+  line-height: 35px;
+  box-shadow: 0 8px 4px rgba(0, 0, 0, 0.14);
+}
+
+.login-button:hover,
+.settings-button:hover {
+  filter: brightness(1.1);
+  color: #fff;
+}
+
+.settings-button:focus,
+.login-button:focus {
+  box-shadow: inset 1px 1px 15px #000;
+}
+
+.login-text-action {
+  color: var(--wine);
+  font-family: "Inter:Medium", sans-serif;
+  font-size: 24px;
+  text-align: center;
+}
+
+.login-text-action small,
+.create-button small {
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  vertical-align: middle;
+}
+
+.create-button {
+  height: 50px;
+  margin-top: 42px;
+  border: 0;
+  border-radius: 99px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  color: var(--wine);
+  font-family: "Inter:Semi Bold", sans-serif;
+  font-size: 24px;
+  line-height: 31px;
+  box-shadow: 0 8px 4px rgba(0, 0, 0, 0.14);
+}
+
+.login-photo {
+  position: relative;
+  min-height: 100dvh;
+  overflow: hidden;
+  border-left: 6px solid var(--wine);
+  background: #6e3734;
+}
+
+.login-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+}
+
+/* Profile */
+.profile-page {
+  display: grid;
+  grid-template-columns: 286px minmax(0, 1fr);
+  min-height: 100dvh;
+  background: var(--cream);
+}
+
+.profile-sidebar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  max-height: 100dvh;
+  background: var(--peach);
+}
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  height: 87px;
+  padding: 13px 20px;
+}
+
+.sidebar-brand img {
+  width: 60px;
+  height: 58px;
+}
+
+.sidebar-brand span {
+  font-size: 30px;
+  white-space: nowrap;
+}
+
+.sidebar-rule {
+  display: block;
+  width: 100%;
+  height: 6px;
+}
+
+.sidebar-nav {
+  padding: 18px 21px;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  height: 52px;
+  color: #000;
+  font-size: 20px;
+}
+
+.sidebar-link img {
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+}
+
+.followed-section {
+  margin-top: 64px;
+}
+
+.followed-section h2 {
+  margin: 0 0 4px 10px;
+  font-family: "Inter:Bold", sans-serif;
+  font-size: 24px;
+}
+
+.followed-rule {
+  display: block;
+  width: calc(100% - 19px);
+  height: 3px;
+}
+
+.followed-chef {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: 57px;
+  padding: 0 10px;
+  color: #000;
+  font-size: 15px;
+}
+
+.followed-avatar {
+  position: relative;
+  width: 36px;
+  height: 36px;
+}
+
+.followed-avatar img {
+  position: absolute;
+  inset: 0;
+  width: 36px;
+  height: 36px;
+}
+
+.followed-avatar img:last-child {
+  inset: 2px;
+  width: 32px;
+  height: 32px;
+}
+
+.sidebar-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 195px;
+  margin: auto auto 26px;
+}
+
+.settings-button,
+.signout-button {
+  height: 50px;
+  border-radius: 99px;
+  font-family: "Inter:Semi Bold", sans-serif;
+  font-size: 24px;
+  line-height: 32px;
+  box-shadow: 0 8px 4px rgba(0, 0, 0, 0.14);
+}
+
+.settings-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  color: #fff;
+}
+
+.settings-button img {
+  width: 28px;
+  height: 28px;
+}
+
+.signout-button {
+  border: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  color: var(--wine);
+}
+
+.profile-content {
+  width: min(100%, 1600px);
+  padding: 51px clamp(28px, 5vw, 62px) 55px;
+  justify-self: center;
+}
+
+.profile-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 272px;
+  padding: 24px 46px 24px 255px;
+  border-radius: 68px;
+  background: var(--wine);
+  color: #fff;
+}
+
+.profile-avatar {
+  position: absolute;
+  left: 18px;
+  width: 223px;
+  height: 217px;
+  border: 6px solid var(--orange);
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-copy h1 {
+  margin: 0;
+  font-family: "Lilita One:Regular", sans-serif;
+  font-size: 48px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.profile-copy > p {
+  margin: 0;
+  font-size: 32px;
+  line-height: 1.4;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--orange);
+  font-family: "Inter:Medium", sans-serif;
+  font-size: 24px;
+}
+
+.location img {
+  width: 30px;
+  height: 30px;
+}
+
+.followers {
+  position: absolute;
+  right: 78px;
+  bottom: 9px;
+  display: flex;
+  align-items: center;
+  color: var(--orange);
+  font-family: "Inter:Semi Bold", sans-serif;
+  font-size: 20px;
+}
+
+.followers img {
+  width: 40px;
+  height: 40px;
+}
+
+.recipes-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 50px 35px 0;
+}
+
+.recipes-header h2 {
+  margin: 0;
+  font-family: "Lilita One:Regular", sans-serif;
+  font-size: 48px;
+}
+
+.avatar-overflow {
+  padding: 5px;
+  border-radius: 8px;
+  background: #f5f5f5;
+  color: #757575;
+  font-size: 14px;
+}
+
+.recipes-rule {
+  display: block;
+  width: 267px;
+  height: 3px;
+  margin-left: 35px;
+}
+
+.recipes-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 26px 44px;
+  margin-top: 13px;
+}
+
+.recipe-card {
+  aspect-ratio: 1.78;
+  overflow: hidden;
+  border: 6px solid var(--wine);
+  background: #d9d9d9;
+}
+
+.recipe-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sidebar-scroll {
+  position: fixed;
+  z-index: 3;
+  top: 100px;
+  bottom: 24px;
+  left: 261px;
+  display: flex;
+  width: 24px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar-scroll img {
+  width: 24px;
+  height: 24px;
+}
+
+.sidebar-scroll span {
+  width: 20px;
+  flex: 1;
+  border-radius: 19px;
+  background: var(--wine);
+}
+
+@media (max-width: 980px) {
+  .brand-landing {
+    font-size: 48px;
+  }
+
+  .landing-nav-link {
+    font-size: 25px;
+  }
+
+  .login-page {
+    grid-template-columns: 1fr;
+  }
+
+  .login-photo {
+    display: none;
+  }
+
+  .profile-page {
+    grid-template-columns: 92px minmax(0, 1fr);
+  }
+
+  .sidebar-brand {
+    justify-content: center;
+    padding-inline: 10px;
+  }
+
+  .sidebar-brand span,
+  .sidebar-link:not(:first-child) {
+    font-size: 0;
+  }
+
+  .sidebar-nav {
+    padding-inline: 30px;
+  }
+
+  .sidebar-link {
+    gap: 0;
+  }
+
+  .followed-section,
+  .sidebar-actions,
+  .sidebar-scroll {
+    display: none;
+  }
+
+  .profile-card {
+    padding-left: 190px;
+  }
+
+  .profile-avatar {
+    width: 155px;
+    height: 155px;
+  }
+
+  .profile-copy h1 {
+    font-size: 38px;
+  }
+
+  .profile-copy > p {
+    font-size: 23px;
+  }
+
+  .location {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 680px) {
+  .landing-header {
+    height: 96px;
+    padding: 0 20px;
+    border-bottom-width: 10px;
+  }
+
+  .brand-landing {
+    font-size: 36px;
+  }
+
+  .landing-header nav {
+    gap: 18px;
+  }
+
+  .landing-nav-link {
+    font-size: 19px;
+  }
+
+  .landing-hero {
+    height: 390px;
+  }
+
+  .landing-chef {
+    width: 265px;
+  }
+
+  .landing-tagline {
+    margin-top: 112px;
+    font-size: 54px;
+  }
+
+  .login-brand {
+    height: 170px;
+    padding: 24px 18px;
+  }
+
+  .login-title {
+    font-size: 48px;
+  }
+
+  .login-subtitle {
+    max-width: 300px;
+    font-size: 20px;
+  }
+
+  .login-chef {
+    left: auto;
+    right: 8px;
+    width: clamp(80px, 100px, 130px);
+    height: clamp(80px, 100px, 130px);
+  }
+
+  .login-form-wrap {
+    margin-top: 70px;
+  }
+
+  .profile-page {
+    display: block;
+  }
+
+  .profile-sidebar {
+    position: relative;
+    display: block;
+    min-height: auto;
+    height: 82px;
+  }
+
+  .sidebar-brand {
+    justify-content: flex-start;
+    height: 76px;
+    padding: 10px 18px;
+  }
+
+  .sidebar-brand img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .sidebar-brand span {
+    display: inline;
+    font-size: 25px;
+  }
+
+  .sidebar-nav {
+    display: none;
+  }
+
+  .profile-content {
+    padding: 28px 18px;
+  }
+
+  .profile-card {
+    display: block;
+    padding: 165px 22px 54px;
+    border-radius: 42px;
+    text-align: center;
+  }
+
+  .profile-avatar {
+    top: 18px;
+    left: 50%;
+    width: 138px;
+    height: 138px;
+    transform: translateX(-50%);
+  }
+
+  .profile-copy h1 {
+    font-size: 34px;
+  }
+
+  .profile-copy > p {
+    font-size: 20px;
+  }
+
+  .location {
+    justify-content: center;
+    font-size: 15px;
+  }
+
+  .followers {
+    right: 50%;
+    transform: translateX(50%);
+  }
+
+  .recipes-header {
+    margin: 34px 5px 0;
+  }
+
+  .recipes-header h2 {
+    font-size: 39px;
+  }
+
+  .recipes-rule {
+    margin-left: 5px;
+  }
+
+  .recipes-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+/* Large tablets and compact laptops */
+@media (min-width: 981px) and (max-width: 1240px) {
+  .profile-content {
+    padding: 38px 26px 44px;
+  }
+
+  .profile-card {
+    min-height: 225px;
+    padding: 24px 28px 24px 200px;
+    border-radius: 52px;
+  }
+
+  .profile-avatar {
+    width: 168px;
+    height: 168px;
+  }
+
+  .profile-copy h1 {
+    font-size: 38px;
+  }
+
+  .profile-copy > p {
+    font-size: 23px;
+  }
+
+  .location {
+    font-size: 18px;
+  }
+
+  .followers {
+    right: 42px;
+  }
+
+  .recipes-grid {
+    gap: 22px;
+  }
+}
+
+/* Tablets */
+@media (min-width: 681px) and (max-width: 980px) {
+  .landing-header {
+    min-height: 112px;
+  }
+
+  .landing-hero {
+    height: clamp(390px, 53vw, 490px);
+  }
+
+  .login-brand {
+    padding-inline: clamp(24px, 7vw, 70px);
+  }
+
+  .login-chef {
+    right: auto;
+    left: 59.659091%;
+  }
+
+  .login-title-rule {
+    width: 68%;
+  }
+
+  .login-form-wrap {
+    margin-top: clamp(60px, 10vh, 100px);
+  }
+
+  .profile-content {
+    padding: 34px 28px 44px;
+  }
+
+  .profile-card {
+    min-height: 230px;
+    padding-right: 28px;
+    border-radius: 52px;
+  }
+
+  .followers {
+    right: 30px;
+  }
+
+  .recipes-grid {
+    gap: 24px;
+  }
+}
+
+/* Phones */
+@media (max-width: 680px) {
+  .landing-header {
+    min-height: 96px;
+  }
+
+  .landing-header-rule {
+    height: 10px;
+  }
+
+  .landing-hero {
+    height: clamp(330px, 112vw, 430px);
+    min-height: 0;
+  }
+
+  .landing-curve {
+    height: clamp(190px, 68vw, 280px);
+  }
+
+  .landing-chef {
+    top: 54%;
+    width: clamp(230px, 70vw, 300px);
+  }
+
+  .landing-tagline {
+    margin: clamp(95px, 31vw, 135px) 16px 30px;
+    font-size: clamp(48px, 15vw, 70px);
+  }
+
+  .login-panel {
+    min-height: 100dvh;
+  }
+
+  .login-title-rule {
+    width: 60%;
+  }
+
+  .login-rule {
+    height: 10px;
+  }
+
+  .login-form-wrap {
+    width: min(502px, calc(100% - 32px));
+    margin-top: clamp(44px, 9vh, 70px);
+    margin-bottom: 32px;
+  }
+
+  .login-heading {
+    font-size: clamp(24px, 7vw, 30px);
+  }
+
+  .login-input {
+    height: 58px;
+    font-size: 17px;
+  }
+
+  .login-button,
+  .create-button {
+    width: 100%;
+    font-size: clamp(18px, 5.5vw, 24px);
+  }
+
+  .login-text-action {
+    font-size: clamp(18px, 5.5vw, 24px);
+  }
+
+  .create-button {
+    margin-top: 26px;
+  }
+
+  .profile-content {
+    width: 100%;
+  }
+
+  .profile-card {
+    min-height: 330px;
+  }
+
+  .recipes-rule {
+    width: min(267px, calc(100% - 10px));
+  }
+
+  .recipe-card {
+    border-width: 4px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .landing-header {
+    display: grid !important;
+    grid-template-columns: 1fr auto;
+    align-content: center;
+    min-height: 126px;
+    padding: 12px 16px 18px;
+  }
+
+  .brand-landing {
+    grid-column: 1 / -1;
+    font-size: clamp(36px, 12vw, 48px);
+    text-align: center;
+  }
+
+  .landing-header nav {
+    grid-column: 1 / -1;
+    justify-content: center;
+    gap: 38px;
+  }
+
+  .landing-nav-link {
+    font-size: 20px;
+  }
+
+  .login-brand {
+    height: 154px;
+    padding: 20px 14px;
+  }
+
+  .login-wordmark {
+    top: 20px;
+    right: 0;
+    left: 14px;
+    margin: 0px;
+  }
+
+  .login-title {
+    font-size: clamp(10px, 20px, 48px);
+  }
+
+  .login-subtitle {
+    max-width: calc(100vw - 120px);
+    font-size: clamp(10px, 15px, 20px);
+  }
+
+  .login-chef {
+    right: 4px;
+    width: clamp(80px, 90px, 108px);
+    height: clamp(80px, 90px, 108px);
+    margin: 0px;
+  }
+
+  .login-title-rule {
+    width: calc(100% - 132px);
+    margin-left: -2px;
+  }
+
+  .profile-content {
+    padding: 22px 12px 32px;
+  }
+
+  .profile-card {
+    padding-inline: 14px;
+    border-radius: 34px;
+  }
+
+  .profile-copy h1 {
+    font-size: clamp(30px, 10vw, 38px);
+  }
+
+  .profile-copy > p {
+    font-size: clamp(17px, 5.7vw, 21px);
+  }
+
+  .location {
+    font-size: clamp(13px, 4.3vw, 16px);
+  }
+
+  .recipes-header h2 {
+    font-size: clamp(34px, 11vw, 42px);
+  }
+}
+
+/* Very narrow devices */
+@media (max-width: 350px) {
+  .landing-header nav {
+    gap: 24px;
+  }
+
+  .login-brand {
+    height: 142px;
+  }
+
+  .login-chef {
+    width: 92px;
+    height: 92px;
+  }
+
+  .login-subtitle {
+    max-width: calc(100vw - 102px);
+    font-size: 15px;
+  }
+
+  .login-title-rule {
+    width: calc(100% - 108px);
+  }
+
+  .login-form-wrap {
+    width: calc(100% - 24px);
+  }
+
+  .wip-badge {
+    padding-inline: 6px;
+    font-size: 9px;
+  }
+
+  .sidebar-brand {
+    padding-inline: 12px;
+  }
+
+  .sidebar-brand span {
+    font-size: 23px;
+  }
+}
+
+/* Short desktop and tablet viewports */
+@media (min-width: 981px) and (max-height: 860px) {
+  .followed-section {
+    margin-top: 20px;
+  }
+
+  .followed-chef {
+    height: 44px;
+  }
+
+  .followed-chef:nth-of-type(n + 6) {
+    display: none;
+  }
+
+  .sidebar-actions {
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .settings-button,
+  .signout-button {
+    height: 44px;
+    font-size: 20px;
+    line-height: 27px;
+  }
+}
+
+@media (min-width: 981px) and (max-height: 700px) {
+  .followed-chef:nth-of-type(n + 4) {
+    display: none;
+  }
+}
+
+/*
+ * The desktop/tablet landing frame scales from the Figma 1440 × 1024 canvas.
+ * Keeping every layer on the same scale preserves the curve at y=610 instead
+ * of letting independent responsive heights push it to the image edge.
+ */
+@media (min-width: 681px) {
+  .landing-page {
+    min-height: max(100dvh, 71.111111vw);
+  }
+
+  .landing-header {
+    height: 9.097222vw;
+    min-height: 0;
+    padding: 0 3.472222vw;
+  }
+
+  .landing-header-rule {
+    height: 1.180556vw;
+  }
+
+  .brand-landing {
+    font-size: 4.444444vw;
+  }
+
+  .landing-header nav {
+    gap: 4.583333vw;
+  }
+
+  .landing-nav-link {
+    font-size: 2.222222vw;
+  }
+
+  .landing-hero {
+    height: 34.166667vw;
+    min-height: 0;
+  }
+
+  .landing-food {
+    object-position: center bottom;
+  }
+
+  .landing-curve {
+    top: 22.839514vw;
+    bottom: auto;
+    width: 100vw;
+    height: 20.84875vw;
+  }
+
+  .landing-chef {
+    top: 17.152778vw;
+    width: 33.322431vw;
+    transform: translateX(-50%);
+  }
+
+  .landing-tagline {
+    position: absolute;
+    top: 58.402778vw;
+    right: 0;
+    left: 0;
+    margin: 0;
+    font-size: 8.888889vw;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+}
