@@ -36,7 +36,7 @@ export default function LandingPage() {
         />
         <img
           className="landing-chef"
-          src={`${assets}/2fed5.svg`}
+          src={`/assets/logo.svg`}
           alt="Cooking Daddy chef"
         />
       </section>

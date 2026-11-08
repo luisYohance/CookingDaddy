@@ -1,4 +1,8 @@
+"use client";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { authClient } from "app/lib/auth-client";
 
 const assets = "/assets/profile";
 
@@ -11,11 +15,37 @@ const recipes = [
 ];
 
 export default function ProfilePage() {
+  const { data, isPending, error } = authClient.useSession();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!isPending && !data) {
+      router.push("/login");
+    }
+  }, [data, isPending]);
+
+  if (isPending) {
+    return <div>Loading...</div>;
+  }
+  if (!data) {
+    return null;
+  }
+
+  async function onSignOut() {
+    return await authClient.signOut({
+      fetchOptions: {
+        onSuccess: () => {
+          router.push("/login"); // redirect to login page
+        },
+      },
+    });
+  }
+
   return (
     <main className="profile-page" data-node-id="1:1226">
       <aside className="profile-sidebar">
         <Link className="sidebar-brand" href="/">
-          <img src={`${assets}/026d2.svg`} alt="" aria-hidden="true" />
+          <img src={`/assets/logo.svg`} alt="" aria-hidden="true" />
           <span className="brand">Cooking Daddy</span>
         </Link>
         <img
@@ -67,13 +97,13 @@ export default function ProfilePage() {
             <img src={`${assets}/07452.svg`} alt="" aria-hidden="true" />
             Settings
           </span>
-          <Link
+          <button
             className="btn signout-button"
-            href="/login"
+            onClick={onSignOut}
             style={{ outline: `5px solid #4d1010` }}
           >
             Sign Out
-          </Link>
+          </button>
         </div>
       </aside>
 
@@ -82,14 +112,16 @@ export default function ProfilePage() {
           <img
             className="profile-avatar"
             src={`${assets}/54eaa.png`}
-            alt="Daddy’s Mommy"
+            alt="Profile Picture"
           />
           <div className="profile-copy">
-            <h1>Daddy’s Mommy</h1>
-            <p>Expert Culinary Teacher</p>
+            <h1>{data.user.name}</h1>
+            <p>Newbie Chef</p>
             <div className="location">
               <img src={`${assets}/f3d04.svg`} alt="" aria-hidden="true" />
-              <span>Hotel, California USA</span>
+              <span>
+                undefined <small>(W.I.P)</small>
+              </span>
             </div>
           </div>
           <div className="followers">
